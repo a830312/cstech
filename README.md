@@ -2,12 +2,23 @@ cstech
 ======
 1. 下載程式zip檔: https://github.com/a830312/cstech
 
-2. 解壓縮後將cstech加入DocumentRoot的目錄中 
 
-3. 安裝apache
+2. 安裝apache
 
-4. 修改httpd.conf中的DocumentRoot: 多加一層/cstech
-(httpd.conf說明: http://www.twisu.com.tw/5/linset/www1.htm)
+3. 修改httpd.conf中的DocumentRoot: 多加一層/cstech
+    (httpd.conf說明: http://www.twisu.com.tw/5/linset/www1.htm)
+    a. (修改點一)
+    # DocumentRoot: The directory out of which you will serve your
+    # documents. By default, all requests are taken from this directory, but
+    # symbolic links and aliases may be used to point to other locations.
+    #
+    DocumentRoot "系統預設值/cstech"
+    b. (修改點二)
+    # This should be changed to whatever you set DocumentRoot to.
+    #
+    <Directory "系統預設值/cstech">
+
+4. 將解壓縮後的cstech資料夾加入DocumentRoot的系統預設值目錄中 
 
 5. 檢視畫面: 打開瀏覽器輸入localhost/index
 
