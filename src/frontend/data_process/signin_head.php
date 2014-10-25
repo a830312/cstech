@@ -2,9 +2,9 @@
     $data = array(
         'icon' => '',
         'title' => 'sign in page',
-        'bootstrapCSS' => STATIC_PATH.'css/bootstrap.min.css',
+        'bootstrapCSS' => 'src/static/css/bootstrap.min.css',
         'customCSS' => array(
-            array('link' => STATIC_PATH.'css/signin.css')
-        ),    
+            array('link' => 'src/static/css/signin.css')
+        ),
     );
 ?>

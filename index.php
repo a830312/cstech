@@ -1,7 +1,6 @@
-
 <?php
-include_once ('vendor/autoload.php');
-include_once ('src/lib/pageAssembler.php');
+include_once (dirname('.').'/vendor/autoload.php');
+include_once (dirname('.').'/src/lib/pageAssembler.php');
 $templates = array(
     'partials' => array(
         array(

@@ -1,8 +1,8 @@
 <?php
-define('INDEX_PATH', '/Library/WebServer/Documents/cstech/');
-define('TEMPLATE_PATH', '/Library/WebServer/Documents/cstech/src/frontend/templates/');
-define('DATA_PATH', '/Library/WebServer/Documents/cstech/src/frontend/data_process/');
-define('STATIC_PATH', '/src/static/');
+define('INDEX_PATH', $_SERVER['DOCUMENT_ROOT']);
+define('TEMPLATE_PATH', INDEX_PATH.'/src/frontend/templates');
+define('DATA_PATH', INDEX_PATH.'/src/frontend/data_process');
+define('STATIC_PATH', INDEX_PATH.'/src/static');
 class pageAssembler {
 
     private $mustache;
@@ -12,14 +12,14 @@ class pageAssembler {
         $mustache = new Mustache_Engine(array(
             'loader' => new Mustache_Loader_FilesystemLoader (INDEX_PATH),
             'partials_loader' => new Mustache_Loader_FilesystemLoader (TEMPLATE_PATH),
-            'cache' => TEMPLATE_PATH.'compiled'
+            'cache' => TEMPLATE_PATH.'/compiled'
         ));
         
         foreach ($templates as $type => $temp) {
             if ($type == 'partials') {
                 foreach ($temp as $partials) {
                     $tpl = $mustache->loadPartial($partials['template']);
-                    include_once(DATA_PATH.$partials['data'].'.php');
+                    include_once(DATA_PATH.'/'.$partials['data'].'.php');
                     $html = $tpl->render($data);
                     echo $html; 
                     //error_log($partials['template']);
