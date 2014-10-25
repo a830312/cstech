@@ -8,10 +8,6 @@ cstech
 3. 修改httpd.conf中的DocumentRoot: 多加一層/cstech
     (httpd.conf說明: http://www.twisu.com.tw/5/linset/www1.htm)
     a. (修改點一)
-     DocumentRoot: The directory out of which you will serve your
-     documents. By default, all requests are taken from this directory, but
-     symbolic links and aliases may be used to point to other locations.
-    
     DocumentRoot "系統預設值/cstech"
     b. (修改點二)
      This should be changed to whatever you set DocumentRoot to.
